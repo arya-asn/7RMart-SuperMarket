@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Grouping]" guice-stage="DEVELOPMENT">
+  <parameter name="invalidUser" value="123abd"/>
+  <parameter name="invalidPass" value="123dfg"/>
+  <parameter name="browser" value="Chrome"/>
+  <listeners>
+    <listener class-name="generateTestReport.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="grouping.xml(failed)">
+    <groups>
+      <run>
+        <include name="smoke testing"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="testScript.LoginPage_Test">
+        <methods>
+          <include name="verifyUserNameAndPasswordUsingInValidCredentials" invocation-numbers="0"/>
+          <include name="initializeBrowser"/>
+        </methods>
+      </class> <!-- testScript.LoginPage_Test -->
+    </classes>
+  </test> <!-- grouping.xml(failed) -->
+</suite> <!-- Failed suite [Grouping] -->
